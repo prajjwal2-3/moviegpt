@@ -1,10 +1,11 @@
 import { logo } from "../utils/constants";
 import { cover } from "../utils/constants";
 import { useRef, useState } from "react";
-import Validate from "../utils/Validate";
-
+// import Validate from "../utils/Validate";
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/Firebase";
 const Login1 = () => {
-  const [islogin, setislogin] = useState(true);
+  const [islogin, setislogin] = useState(false);
   const [err,seterr]  = useState(null)
   const handleclick = () => {
     setislogin(!islogin);
@@ -13,8 +14,33 @@ const Login1 = () => {
      const email = useRef(null);
      const password = useRef(null);
   const handlebutton = ()=>{
-    const val = Validate(email.current.value,password.current.value);
-    seterr(val);
+    // const val = Validate(email.current.value,password.current.value);
+    // seterr(val);
+    if(!islogin){
+        createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+       
+        const user = userCredential.user;
+        console.log(user)
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+       seterr(errorCode+ " " +errorMessage)
+      });
+      }else{
+        signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+  .then((userCredential) => {
+    
+    const user = userCredential.user;
+    
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    seterr(errorCode+ " " +errorMessage)
+  });
+      }
   }
   
      
