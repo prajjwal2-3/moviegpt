@@ -5,6 +5,7 @@ import Browser from './components/Browse';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import Login1 from './components/Login1';
+import './App.css';
 function App() {
   return (
     <div >
