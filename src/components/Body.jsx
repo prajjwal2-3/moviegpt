@@ -1,6 +1,9 @@
+
+
 const Body=()=>{
     return(
-        <div className="body"></div>
+   <div className="">vbkbb</div>
     )
 }
+
 export default Body;
