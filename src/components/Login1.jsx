@@ -24,7 +24,7 @@ const Login1 = () => {
              className="my-4 p-2 rounded-md bg-slate-600"
            />
           }
-          <input type="password" className="my-4 rounded-md p-2 bg-slate-600" />
+          <input type="password" placeholder="Password"className="my-4 rounded-md p-2 bg-slate-600" />
           <button className="p-2 bg-red-700 my-4 rounded-md ">
             {islogin ? "SIGN IN" : "SIGN UP"}
           </button>
