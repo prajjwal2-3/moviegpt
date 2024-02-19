@@ -1,12 +1,29 @@
 import { logo } from "../utils/constants";
 import { cover } from "../utils/constants";
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // import Validate from "../utils/Validate";
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/Firebase";
+import { adduser,removeuser } from "../utils/Userslice";
+import {  useDispatch } from "react-redux";
 const Login1 = () => {
+  const dispatch = useDispatch();
+  const navigate =useNavigate();
   const [islogin, setislogin] = useState(false);
   const [err,seterr]  = useState(null)
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+     if (user) {
+       const {uid,email,displayName} = user;
+      dispatch(adduser({uid:uid, email:email, displayName:displayName}));
+      console.log("action dispatched")
+     navigate("/browse");
+     } else {
+       dispatch(removeuser());
+     }
+   });
+   },[])
   const handleclick = () => {
     setislogin(!islogin);
      };
@@ -16,12 +33,14 @@ const Login1 = () => {
   const handlebutton = ()=>{
     // const val = Validate(email.current.value,password.current.value);
     // seterr(val);
+    
     if(!islogin){
         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
       .then((userCredential) => {
        
         const user = userCredential.user;
         console.log(user)
+        
       })
       .catch((error) => {
         const errorCode = error.code;
