@@ -30,7 +30,7 @@ const Mainvideo = ({ id }) => {
   return (
     <div className="">
       <iframe
-       className=""
+       className="w-full aspect-video"
         src={"https://www.youtube.com/embed/"+key}
         title="YouTube video player"
        

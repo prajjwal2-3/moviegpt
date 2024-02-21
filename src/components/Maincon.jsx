@@ -6,12 +6,15 @@ const Maincon=()=>{
     console.log(movies[0])
     const {title,id,overview} = movies[0];
     return(
-        <div className="py-80 px-16">
-        <div className="text-3xl font-bold ">{title}</div>
-        <div className="w-1/4 text-lg">{overview}</div>
-        <Mainvideo id={id}/>
+        <div className=" ">
+         
+       <div className=" py-80 px-16  text-black">
+       <div className="text-5xl font-extrabold  ">{title}</div>
+        <div className="w-1/4 text-lg my-2 ">{overview}</div>
+       </div>
+       
         </div>
-        
+       
     )
 }
 export default Maincon;
