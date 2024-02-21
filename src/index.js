@@ -1,39 +1,41 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Body from './components/Body';
+
 import Browser from './components/Browse';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import { createBrowserRouter,Outlet,RouterProvider } from 'react-router-dom';
 import Login1 from './components/Login1';
+import Header from './components/Header';
 import './App.css';
 import { Provider } from 'react-redux';
 import { store} from './utils/Appstore'
 
 function App() {
- 
   
   return (
     <div >
-    
-    <Body/>
+        <Header/>
+        <Outlet/>
     </div>
   );
   
 }
 const router = createBrowserRouter([
   {
-   path: "/browse",
-   element: <Browser/>
+   path: "/",
+   element: <Login1/>,
+   children: [
+    {
+      path: "/browse",
+      element:<Browser/>
+    },
+    {
+      path: "/login",
+      element:<Login1/>
+    }
+   ]
   },
-  {
-    path: "/login",
-    element:<Login1/>
-  },
-{
-  path: "/",
-  element: <Login1/>
- },
-
+  
 ])
 
 
