@@ -30,8 +30,7 @@ const Mainvideo = ({ id }) => {
   return (
     <div className="">
       <iframe
-        width="560"
-        height="315"
+       className=""
         src={"https://www.youtube.com/embed/"+key}
         title="YouTube video player"
        
