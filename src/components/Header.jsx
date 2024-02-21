@@ -23,7 +23,7 @@ const Header = ()=>{
    });
    },[])
     return(
-    <div className="header">ejtyyk</div>
+    <div className="header"></div>
     )
 }
 export default Header;
