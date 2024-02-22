@@ -4,7 +4,7 @@ import { options } from "../utils/constants";
 import { auth } from "../utils/Firebase";
 import { signOut } from "firebase/auth";
 import { useEffect } from "react";
-import { addnowplayingmovies, addpopularmovies } from "../utils/Movieslice";
+import { addnowplayingmovies, addpopularmovies,addtoprated,addupcoming } from "../utils/Movieslice";
 import Maincon from "./Maincon";
 import Lowercon from "./Lowercon";
 
@@ -22,15 +22,22 @@ const Browser = () => {
         options)
       const data2 = await fetch(
         "https://api.themoviedb.org/3/movie/popular",
-        options
-      
-      );
+        options);
+        const data3 = await fetch(
+          "https://api.themoviedb.org/3/movie/top_rated",
+          options);
+          const data4 = await fetch(
+            "https://api.themoviedb.org/3/movie/upcoming",
+            options);
       const json1 = await data1.json();
       const json2 = await data2.json();
-      console.log(json1.results);
-      console.log(json2.results);
+      const json3 = await data3.json();
+      const json4 = await data4.json();
+      console.log(json3.results);
       dispatch(addnowplayingmovies(json1.results));
       dispatch(addpopularmovies(json2.results));
+      dispatch(addtoprated(json3.results));
+      dispatch(addupcoming(json4.results));
     } catch (error) {}
   };
 
