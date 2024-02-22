@@ -23,8 +23,8 @@ const Header = ()=>{
    });
    },[])
     return(
-    <div className="header absolute text-white">
-       jebihjnoiht
+    <div className="header  text-white">
+      
     </div>
     )
 }
