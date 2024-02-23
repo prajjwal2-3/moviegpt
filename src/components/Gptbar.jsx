@@ -30,9 +30,9 @@ const Gptbar=()=>{
                  
                   const gptMovies =
                   completion?.choices?.[0]?.message?.content?.split(",") || [];
-                  const promisearray=gptMovies.map((movies)=>Tmbdmovies(movies.trim()))
+                  const promisearray=gptMovies?.map((movies)=>Tmbdmovies(movies.trim()))
                   const rough = await Promise.all(promisearray)
-                 const FINAL_LIST = rough.map((array)=>array.results[0])
+                 const FINAL_LIST = rough?.map((array)=>array.results[0])
                   console.log(FINAL_LIST)
                   dispatch(addrecommendedmovies(FINAL_LIST))
                 }catch(error){
