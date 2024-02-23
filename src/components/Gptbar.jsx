@@ -19,7 +19,7 @@ const Gptbar=()=>{
         const gptQuery =
         "act as a movie reccomendation system and suggest some movies for the query : " +
         (prompt.current?.value || "") +
-        ". only give me ten movies, comma separated like the example given ahead. Example : Gadar , Border , Sholay , Don, Andaz Apna Apna, 3 idiots, knives out, grand budapest hostel, The shawshank redemption, 12th fail";
+        ". only give me five movies, comma separated like the example given ahead. Example : Gadar , Border , Sholay , Don , 12th fail";
             try{
                 const completion = await Openai.chat.completions.create({
              
@@ -33,7 +33,7 @@ const Gptbar=()=>{
                   const promisearray=gptMovies?.map((movies)=>Tmbdmovies(movies.trim()))
                   const rough = await Promise.all(promisearray)
                  const FINAL_LIST = rough?.map((array)=>array.results[0])
-                  console.log(FINAL_LIST)
+                 
                   dispatch(addrecommendedmovies(FINAL_LIST))
                 }catch(error){
         
