@@ -56,7 +56,7 @@ const Browser = () => {
   return (
     <div className="">
       
-      <div className="flex absolute justify-around">
+      <div className="flex absolute justify-around bg-gradient-to-b from-black">
      
         <div className="w-9/12  z-40">
         <img src={logo} alt="" className="w-2/12" />
