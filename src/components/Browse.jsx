@@ -3,14 +3,14 @@ import { logo } from "../utils/constants";
 import { options } from "../utils/constants";
 import { auth } from "../utils/Firebase";
 import { signOut } from "firebase/auth";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { addnowplayingmovies, addpopularmovies,addtoprated,addupcoming } from "../utils/Movieslice";
 import Maincon from "./Maincon";
 import Lowercon from "./Lowercon";
-
+import Gptsearch1 from "./Gptsearch";
 const Browser = () => {
   const dispatch = useDispatch();
-
+  const[gptsearch,setgptsearch]=useState("Smart Search");
   useEffect(() => {
     apicall();
     console.log("Movie api called");
@@ -40,6 +40,9 @@ const Browser = () => {
       dispatch(addupcoming(json4.results));
     } catch (error) {}
   };
+  const handlegptclick=()=>{
+        gptsearch==="Smart Search"? setgptsearch("Home"): setgptsearch("Smart Search")
+  }
 
   const handlesignout = () => {
     signOut(auth)
@@ -53,17 +56,25 @@ const Browser = () => {
   return (
     <div className="">
       
-      <div className="flex absolute">
+      <div className="flex absolute justify-around">
      
-        <div className="w-11/12  z-40">
+        <div className="w-9/12  z-40">
         <img src={logo} alt="" className="w-2/12" />
         </div>
-        <div className="text-black m-4 p-4 w-1/12 ">
-          <button className="text-white" onClick={handlesignout}>Sign Out</button>
+        
+      <div className="m-4 p-4  z-40 ">
+        <button className="text-white p-2 rounded-md  bg-purple-600" onClick={handlegptclick}>{gptsearch}</button>
+        </div>
+        <div className=" m-4 p-4 w-1/12 z-40 ">
+          <button className="text-white bg-red-500 p-2 rounded-md" onClick={handlesignout}>Sign Out</button>
         </div>
       </div>
+      {gptsearch==="Home"? <Gptsearch1/>:
+     <>
       <Maincon/>
      <Lowercon/>
+     </>}
+      
    
      
     </div>
