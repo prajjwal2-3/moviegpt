@@ -3,7 +3,7 @@ import Mainvideo from "./Mainvideo";
 const Maincon=()=>{
     const movies = useSelector((state)=> state.Movies?.nowplayingmovies)
     if(!movies) return <div className="">loading...</div>
-    console.log(movies[0])
+    
     const {title,id,overview} = movies[0];
     return(
         <div className="">

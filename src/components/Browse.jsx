@@ -13,7 +13,7 @@ const Browser = () => {
   const[gptsearch,setgptsearch]=useState("Smart Search");
   useEffect(() => {
     apicall();
-    console.log("Movie api called");
+   
   }, []);
   const apicall = async () => {
     try {
@@ -33,7 +33,7 @@ const Browser = () => {
       const json2 = await data2.json();
       const json3 = await data3.json();
       const json4 = await data4.json();
-      console.log(json3.results);
+      
       dispatch(addnowplayingmovies(json1.results));
       dispatch(addpopularmovies(json2.results));
       dispatch(addtoprated(json3.results));
@@ -47,7 +47,7 @@ const Browser = () => {
   const handlesignout = () => {
     signOut(auth)
       .then(() => {
-        console.log("signed out");
+        
       })
       .catch((error) => {
         // An error happened.
@@ -72,7 +72,7 @@ const Browser = () => {
       {gptsearch==="Home"? <Gptsearch1/>:
      <>
       <Maincon/>
-     <Lowercon/>
+    <div className="z-40"> <Lowercon/></div>
      </>}
       
    

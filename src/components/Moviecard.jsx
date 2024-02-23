@@ -1,7 +1,7 @@
 
 import { IMG_URL } from "../utils/constants";
 const Moviecard = (movies) => {
-console.log(movies)
+
   return (
     
       <div className="mx-4 flex-shrink-0 ">

@@ -14,7 +14,7 @@ const Header = ()=>{
      if (user) {
        const {uid,email,displayName} = user;
       dispatch(adduser({uid:uid, email:email, displayName:displayName}));
-      console.log("action dispatched")
+      
      navigate("/browse");
      } else {
        dispatch(removeuser());

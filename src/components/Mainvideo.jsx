@@ -20,13 +20,13 @@ const Mainvideo = ({ id }) => {
         (data) => data.type === "Trailer"
       );
       dispatch(addtrailer(maintrailor))
-      console.log(maintrailor);
+     
     } catch (error) {
       console.error(error);
     }
   };
   const key = useSelector((state)=> state.Movies?.maintrailer?.[0]?.key)
-  console.log(key)
+  
   return (
     <div className="">
       <iframe

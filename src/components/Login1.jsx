@@ -25,7 +25,7 @@ const Login1 = () => {
       .then((userCredential) => {
        
         const user = userCredential.user;
-        console.log(user)
+        
         
       })
       .catch((error) => {
