@@ -25,18 +25,7 @@
 
 <h3> Code Demo </h3>
 
-```html
 
-We will use markdown for the Syntax Highlighting
-
-<ul>
-  <li>Beautiful Starter Template for README.md</li>
-  <li>Key feature num. 2</li>
-  <li>Key feature num. 3</li>
-  <li>Key feature num. 4</li>
-</ul>
-
-```
 
 <h3> Download & Installation </h3>
 
