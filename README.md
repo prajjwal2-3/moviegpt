@@ -30,7 +30,9 @@
 <h3> Download & Installation </h3>
 
 ```shell
-$ npm i moviegpt
+git clone https://github.com/prajjwal2-3/moviegpt
+cd moviegpt
+npm start
 ```
 <h3>Contributing</h3>
 Keep it simple. Keep it minimal. Don't put every single feature just because you can.
