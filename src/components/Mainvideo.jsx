@@ -29,6 +29,7 @@ const Mainvideo = ({ id }) => {
   
   return (
     <div className="">
+      
       <iframe
        className="w-full aspect-video"
         src={"https://www.youtube.com/embed/"+key+"?playlist="+key+"&loop=1&autoplay=1&mute=1&controls=0"}

@@ -8,11 +8,11 @@ const Maincon=()=>{
     return(
         <div className="">
          
-       <div className=" py-80 px-16 absolute bg-gradient-to-r from-black h-screen text-white">
-       <div className="text-5xl font-extrabold  ">{title}</div>
-        <div className="w-1/4 text-lg my-2 ">{overview}</div>
-        <button className="bg-white m-2  px-6 py-3 rounded-md text-black shadow-md on hover:opacity-75">▶️Play</button>
-        <button className="bg-gray-500 m-2  px-6 py-3 rounded-md opacity-65 on hover:opacity-75 shadow-md">More info</button>
+       <div className=" sm:py-80 sm:px-16 px-8 py-16 absolute  text-white">
+       <div className="sm:text-5xl text-md font-extrabold  ">{title}</div>
+        <div className="sm:w-1/4  sm:text-lg text-xs my-2  ">{overview}</div>
+        <button className="bg-white sm:m-2 mx-1 sm:px-6 sm:py-3 px-2 py-1 rounded-md text-black shadow-md on hover:opacity-75">▶️Play</button>
+        <button className="bg-gray-500 sm:m-2  sm:px-6 sm:py-3 px-2 py-1 rounded-md opacity-65 on hover:opacity-75 shadow-md">More info</button>
        </div>
        <div className=""><Mainvideo id={id}/> </div>
         </div>

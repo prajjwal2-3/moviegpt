@@ -9,9 +9,9 @@ const Lowercon=()=>{
     if(!movies1) return <div className="">loading....</div>
     return(
         <>
-        <div className="bg-black text-white  -mt-38">
+        <div className="bg-black text-white">
         <div className="text-white font-bold text-xl ml-6">Now playing</div>
-          <div className="flex overflow-x-auto p-6 ">
+          <div className="flex overflow-x-auto sm:p-6 py-1 ">
       {movies1.map((movies,index)=>(
  <Moviecard key={index} movie={movies}/>
          ))}
@@ -19,7 +19,7 @@ const Lowercon=()=>{
         </div>
         <div className="bg-black text-white">
         <div className="text-white font-bold text-xl ml-6">Popular Movies</div>
-          <div className="flex overflow-x-auto p-6  ">
+          <div className="flex overflow-x-auto sm:p-6 py-1  ">
       {movies2.map((movies,index)=>(
  <Moviecard key={index} movie={movies}/>
          ))}
@@ -27,7 +27,7 @@ const Lowercon=()=>{
         </div>
         <div className="bg-black text-white">
         <div className="text-white font-bold text-xl ml-6">Top Rated</div>
-          <div className="flex overflow-x-auto p-6  ">
+          <div className="flex overflow-x-auto sm:p-6 py-1 ">
       {movies3.map((movies,index)=>(
  <Moviecard key={index} movie={movies}/>
          ))}
@@ -35,7 +35,7 @@ const Lowercon=()=>{
         </div>
         <div className="bg-black text-white">
         <div className="text-white font-bold text-xl ml-6">Upcoming</div>
-          <div className="flex overflow-x-auto p-6  ">
+          <div className="flex overflow-x-auto sm:p-6 py-1 ">
       {movies4.map((movies,index)=>(
  <Moviecard key={index} movie={movies}/>
          ))}

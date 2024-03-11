@@ -56,17 +56,17 @@ const Browser = () => {
   return (
     <div className="">
       
-      <div className="flex absolute justify-around bg-gradient-to-b from-black">
+      <div className="flex absolute justify-between">
      
-        <div className="w-9/12  z-40">
-        <img src={logo} alt="" className="w-2/12" />
+        <div className="sm:w-9/12 w-6/12   z-40">
+        <img src={logo} alt="" className="sm:w-2/12 w-6/12" />
         </div>
         
-      <div className="m-4 p-4  z-40 ">
-        <button className="text-white p-2 rounded-md  bg-purple-600" onClick={handlegptclick}>{gptsearch}</button>
+      <div className="sm:m-4 m-1  sm:p-4   z-40 ">
+        <button className="text-white text-sm sm:p-2 p-0.5 rounded-md  bg-purple-600" onClick={handlegptclick}>{gptsearch}</button>
         </div>
-        <div className=" m-4 p-4 w-1/12 z-40 ">
-          <button className="text-white bg-red-500 p-2 rounded-md" onClick={handlesignout}>Sign Out</button>
+        <div className="sm:m-4 m-1 sm:p-4  z-40 ">
+          <button className="text-white text-sm bg-red-500 sm:p-2 p-0.5 rounded-md" onClick={handlesignout}>Sign Out</button>
         </div>
       </div>
       {gptsearch==="Home"? <Gptsearch1/>:
