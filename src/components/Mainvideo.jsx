@@ -28,10 +28,10 @@ const Mainvideo = ({ id }) => {
   const key = useSelector((state)=> state.Movies?.maintrailer?.[0]?.key)
   
   return (
-    <div className="">
-      
+    <div className="relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-black "></div>
       <iframe
-       className="w-full aspect-video"
+       className="w-full aspect-video "
         src={"https://www.youtube.com/embed/"+key+"?playlist="+key+"&loop=1&autoplay=1&mute=1&controls=0"}
         title="YouTube video player"
        
