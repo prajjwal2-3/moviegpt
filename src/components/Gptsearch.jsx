@@ -6,9 +6,9 @@ const Gptsearch1=()=>{
     
     return(
         <>
-        <div className="flex h-screen">
+        <div className="flex justify-center">
            
-        <img src={cover} alt="" className=" object-cover w-full  " />
+        <img src={cover} alt="" className=" object-cover w-full h-screen fixed " />
             
             <div className="absolute  ">
                 <div className="flex justify-center w-full items-center mt-8"> <Gptbar/></div>
