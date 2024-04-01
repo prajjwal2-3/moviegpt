@@ -11,5 +11,5 @@ export const options = {
   };
  
 export const IMG_URL= "https://image.tmdb.org/t/p/original"
-// export const OPENAIKEY = "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"
+export const OPENAIKEY = "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"
 // export const OPENAIKEY = "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"
