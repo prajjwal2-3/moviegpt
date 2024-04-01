@@ -3,7 +3,7 @@ import { OPENAIKEY } from "./constants";
 
 
 const Openai = new OpenAI(
-   { apiKey: process.env.REACT_APP_OPENAI_KEY,
+   { apiKey: OPENAIKEY,
     dangerouslyAllowBrowser: true,
 }
 );
